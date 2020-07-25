@@ -25,5 +25,5 @@
 # - name: "Run rhel8 pci dss locally"
 #   include_tasks: /usr/share/scap-security-guide/ansible/rhel8-playbook-pci-dss.yml  
 
-- name: "Run rhel8 pci dss locally"
-  shell: ansible-playbook -i "localhost," -c local /usr/share/scap-security-guide/ansible/rhel8-playbook-pci-dss.yml
+# - name: "Run rhel8 pci dss locally"
+#   shell: ansible-playbook -i "localhost," -c local /usr/share/scap-security-guide/ansible/rhel8-playbook-pci-dss.yml

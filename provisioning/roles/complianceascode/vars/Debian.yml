@@ -1,7 +1,7 @@
 ---
 system_packages:
   #oscap tool
-  - openscap-scanner 
+  # - openscap-scanner 
   #SCAP Workbench
   - scap-workbench
   #SCAP content (XCCDF, OVAL…​)
