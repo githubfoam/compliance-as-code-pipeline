@@ -1,3 +1,8 @@
 ---
 system_packages:
-  - scap-security-guide
+  #oscap tool
+  - openscap-scanner
+  #SCAP Workbench  
+  - scap-workbench
+  #SCAP content (XCCDF, OVAL…​)
+  - scap-security-guide  

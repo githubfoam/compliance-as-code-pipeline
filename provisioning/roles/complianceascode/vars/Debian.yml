@@ -1,6 +1,11 @@
 ---
 system_packages:
+  #oscap tool
+  - openscap-scanner 
+  #SCAP Workbench
+  - scap-workbench
+  #SCAP content (XCCDF, OVAL…​)
   - ssg-debian  # for Debian guides
   - ssg-debderived  # for Debian-based distributions (e.g. Ubuntu) guides
   - ssg-nondebian  # for other distributions guides (RHEL, Fedora, etc.)
-  - ssg-applications  # for application-oriented guides (Firefox, JBoss, etc.)
+  - ssg-applications  # for application-oriented guides (Firefox, JBoss, etc.)   
