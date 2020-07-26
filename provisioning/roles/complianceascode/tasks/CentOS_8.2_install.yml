@@ -35,20 +35,20 @@
 - debug: var=stig.stdout_lines  
 
 # Print the shell task's stdout.
-- debug: msg={{ stig.stdout }}
+# - debug: msg={{ stig.stdout }}
 
 # Print all contents of the shell task's output.
-- debug: var=stig
+# - debug: var=stig
 
 # https://docs.ansible.com/ansible/latest/modules/debug_module.html
 - debug:
     var: stig
     verbosity: 2
 
-- debug:
-    var: stig
-    verbosity: 4    
+# - debug:
+#     var: stig
+#     verbosity: 4    
 
-- debug:
-    var: stig
-    verbosity: 3 #set to 3 it will only run debug when -vvv or above        
+# - debug:
+#     var: stig
+#     verbosity: 3 #set to 3 it will only run debug when -vvv or above        
