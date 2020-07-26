@@ -36,5 +36,3 @@
 #     var: possiblechoicesresult
 #     verbosity: 2
 
-- name: "run STIG"
-  shell: bash /usr/share/scap-security-guide/bash/rhel8-script-stig.sh
