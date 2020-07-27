@@ -31,7 +31,8 @@
 - name: "run STIG"
   shell: bash /usr/share/scap-security-guide/bash/rhel8-script-stig.sh
   tags: STIG 
-  register: stig
+  register: stigreg
+
 
 # - debug: var=stig.stdout_lines  
 
@@ -43,7 +44,7 @@
 
 # https://docs.ansible.com/ansible/latest/modules/debug_module.html
 - debug:
-    var: stig
+    var: stigreg
     verbosity: 2
 
 # - debug:
@@ -53,3 +54,13 @@
 # - debug:
 #     var: stig
 #     verbosity: 3 #set to 3 it will only run debug when -vvv or above        
+
+- name: "run PCI DSS"
+  shell: bash /usr/share/scap-security-guide/bash/rhel8-script-pci-dss.sh
+  tags: pcidss 
+  register: pcidssreg
+
+# https://docs.ansible.com/ansible/latest/modules/debug_module.html
+- debug:
+    var: pcidssreg
+    verbosity: 2
