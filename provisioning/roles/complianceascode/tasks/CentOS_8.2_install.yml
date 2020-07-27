@@ -30,9 +30,10 @@
 
 - name: "run STIG"
   shell: bash /usr/share/scap-security-guide/bash/rhel8-script-stig.sh
+  tags: STIG 
   register: stig
 
-- debug: var=stig.stdout_lines  
+# - debug: var=stig.stdout_lines  
 
 # Print the shell task's stdout.
 # - debug: msg={{ stig.stdout }}
