@@ -34,7 +34,7 @@
   register: stigreg
 
 
-# - debug: var=stig.stdout_lines  
+- debug: var=stigreg.stdout_lines  
 
 # Print the shell task's stdout.
 # - debug: msg={{ stig.stdout }}
@@ -43,9 +43,9 @@
 # - debug: var=stig
 
 # https://docs.ansible.com/ansible/latest/modules/debug_module.html
-- debug:
-    var: stigreg
-    verbosity: 2
+# - debug:
+#     var: stigreg
+#     verbosity: 2
 
 # - debug:
 #     var: stig
@@ -60,7 +60,9 @@
   tags: pcidss 
   register: pcidssreg
 
+- debug: var=pcidssreg.stdout_lines  
+
 # https://docs.ansible.com/ansible/latest/modules/debug_module.html
-- debug:
-    var: pcidssreg
-    verbosity: 2
+# - debug:
+#     var: pcidssreg
+#     verbosity: 2
