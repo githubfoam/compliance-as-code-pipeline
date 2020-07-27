@@ -17,16 +17,16 @@ matrix:
         - virtualenv -p $(which python3) ~venvpy3
         - source ~venvpy3/bin/activate
         - pip install -r requirements.txt
-        - vagrant plugin install vagrant-libvirt #The vagrant-libvirt plugin is required when using KVM on Linux
-        - vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with different providers
+        - sudo vagrant plugin install vagrant-libvirt #The vagrant-libvirt plugin is required when using KVM on Linux
+        - sudo vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with different providers
       script:
           - sudo make deploy-libvirt
           - sudo make deploy-vagrant
           # - sudo make deploy-complianceascode-redhat
           # - travis_wait 20 waitfortrav.sh
-          - vagrant box add "bento/centos-8.2" --provider=virtualbox
-          - vagrant mutate "bento/centos-8.2" libvirt
-          - vagrant up --provider=libvirt "vg-compute-06"
+          - sudo vagrant box add "bento/centos-8.2" --provider=virtualbox
+          - sudo vagrant mutate "bento/centos-8.2" libvirt
+          - sudo vagrant up --provider=libvirt "vg-compute-06"
       after_success:
         - vagrant box list #veridy installed boxes
         - vagrant status #Check the status of the VMs to see that none of them have been created yet
@@ -43,15 +43,15 @@ matrix:
         - virtualenv -p $(which python3) ~venvpy3
         - source ~venvpy3/bin/activate
         - pip install -r requirements.txt
-        - vagrant plugin install vagrant-libvirt #The vagrant-libvirt plugin is required when using KVM on Linux
-        - vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with different providers
+        - sudo vagrant plugin install vagrant-libvirt #The vagrant-libvirt plugin is required when using KVM on Linux
+        - sudo vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with different providers
       script:
           - sudo make deploy-libvirt
           - sudo make deploy-vagrant
           # - sudo make deploy-complianceascode-redhat
           # - travis_wait 20 waitfortrav.sh
-          - vagrant box add "centos/8" --provider=libvirt
-          - vagrant up --provider=libvirt "vg-compute-13"
+          - sudo vagrant box add "centos/8" --provider=libvirt
+          - sudo vagrant up --provider=libvirt "vg-compute-13"
       after_success:
         - vagrant box list #veridy installed boxes
         - vagrant status #Check the status of the VMs to see that none of them have been created yet
