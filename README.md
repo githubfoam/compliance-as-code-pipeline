@@ -1,5 +1,7 @@
 # compliance-as-code-pipeline
-compliance as code
+
+[![Build Status](https://travis-ci.com/githubfoam/compliance-as-code-pipeline.svg?branch=test)](https://travis-ci.com/githubfoam/compliance-as-code-pipeline)  
+
 
 ~~~~
 https://github.com/complianceascode/content
