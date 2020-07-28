@@ -4,10 +4,6 @@
 
 
 ~~~~
-https://github.com/complianceascode/content
-~~~~
-
-~~~~
 oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_rht-ccp --results-arf arf.xml --report report.html --oval-results /usr/share/xml/scap/ssg/content/ssg-rhel7-ds.xml
 
 oscap xccdf eval --profile xccdf_org.ssgproject.content_profile_hipaa --results-arf arf.xml --report report.html --oval-results /usr/share/xml/scap/ssg/content/ssg-rhel7-ds.xml
@@ -153,4 +149,8 @@ total 15412
 -rw-r--r--. 1 root root  366287 Apr 24 02:34 rhel8-script-ospp.sh
 -rw-r--r--. 1 root root  510899 Apr 24 02:34 rhel8-script-pci-dss.sh
 -rw-r--r--. 1 root root  392105 Apr 24 02:34 rhel8-script-stig.sh
+~~~~
+
+~~~~
+https://github.com/complianceascode/content
 ~~~~
