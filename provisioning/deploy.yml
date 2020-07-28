@@ -14,14 +14,14 @@
 
 - name: "vg-compute-06"
   gather_facts: true
-  hosts:  all
+  hosts:  vg-compute-06
   become: yes
   roles:
     - complianceascode
 
 - name: "vg-compute-13"
   gather_facts: true
-  hosts:  all
+  hosts: "vg-compute-13"
   become: yes
   roles:
     - complianceascode
