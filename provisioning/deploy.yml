@@ -22,12 +22,11 @@
 #     - complianceascode
   
 
-- name: "vg-compute-13"
+- name: "Install compliance as code"
   gather_facts: true
   hosts: "vg-compute-13"   
   tags: 
   - pcidss 
-- name: 
   become: yes
   roles:
     - complianceascode  
