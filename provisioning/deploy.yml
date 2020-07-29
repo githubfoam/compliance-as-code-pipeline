@@ -27,6 +27,9 @@
   hosts: "vg-compute-13"   
   become: yes
   roles:
-    - complianceascode
-  tags:
-    - pcidss  
+    - role: complianceascode 
+      tags: [ pcidss ]  
+  # roles:
+  #   - complianceascode
+  # tags:
+  #   - pcidss  
