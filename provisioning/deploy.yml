@@ -24,7 +24,7 @@
 
 - name: "Install compliance as code"
   gather_facts: true
-  hosts: "vg-compute-13"   
+  hosts: vg-compute-13   
   become: yes
   roles:
     - role: complianceascode 
