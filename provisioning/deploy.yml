@@ -16,16 +16,12 @@
   gather_facts: true  
   hosts: "vg-compute-06"
   become: yes
-  # roles:
-  #   - complianceascode
-  # roles:
-  #   - role: complianceascode 
-  #     tags: [ pcidss ]    
-  tasks:
-      - include_role:
-          name: complianceascode
-        tags:
-          - pcidss
+  vars:
+    # stigparam: true
+    stigpcidss: true
+  roles:
+    - complianceascode
+ 
 
 - name: "Install compliance as code"
   gather_facts: true

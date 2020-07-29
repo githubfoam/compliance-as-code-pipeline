@@ -30,14 +30,12 @@
 
 - name: "run STIG"
   shell: bash /usr/share/scap-security-guide/bash/rhel8-script-stig.sh
-  tags:
-  - stig  
+  when: stigparam|bool
   register: stigreg
 
 
 - debug: var=stigreg.stdout_lines  
-  tags:
-  - stig  
+  when: stigparam|bool  
 
 # Print the shell task's stdout.
 # - debug: msg={{ stig.stdout }}
@@ -60,13 +58,11 @@
 
 - name: "run PCI DSS"
   shell: bash /usr/share/scap-security-guide/bash/rhel8-script-pci-dss.sh
-  tags:
-  - pcidss
+  when: stigpcidss|bool
   register: pcidssreg
 
 - debug: var=pcidssreg.stdout_lines  
-  tags:
-  - pcidss
+  when: stigpcidss|bool
 
 # https://docs.ansible.com/ansible/latest/modules/debug_module.html
 # - debug:
