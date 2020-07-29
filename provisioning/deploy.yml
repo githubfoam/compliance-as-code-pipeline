@@ -12,14 +12,12 @@
   roles:
     - common
 
-# - name: "vg-compute-06"
-#   gather_facts: true
-#   tags:
-#   - stig    
-#   hosts: "vg-compute-06"
-#   become: yes
-#   roles:
-#     - complianceascode
+- name: "vg-compute-06"
+  gather_facts: true  
+  hosts: "vg-compute-06"
+  become: yes
+  roles:
+    - complianceascode
   
 
 - name: "Install compliance as code"

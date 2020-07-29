@@ -8,33 +8,7 @@ matrix:
   fast_finish: true
   include:
 
-    # - name: "build STIG compliance as code redhat "
-    #   dist: bionic
-    #   language: python
-    #   python: 3.7
-    #   before_install:
-    #     - pip3 install virtualenv
-    #     - virtualenv -p $(which python3) ~venvpy3
-    #     - source ~venvpy3/bin/activate
-    #     - pip install -r requirements.txt
-    #     - sudo make deploy-libvirt
-    #     - sudo make deploy-vagrant        
-    #     - sudo vagrant plugin install vagrant-libvirt #The vagrant-libvirt plugin is required when using KVM on Linux
-    #     - sudo vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with different providers
-    #   script:
-    #       # - sudo make deploy-complianceascode-redhat
-    #       # - travis_wait 20 waitfortrav.sh
-    #       - sudo vagrant box add "bento/centos-8.2" --provider=virtualbox
-    #       - sudo vagrant mutate "bento/centos-8.2" libvirt
-    #       - sudo vagrant up --provider=libvirt "vg-compute-06"
-    #   after_success:
-    #     - vagrant box list #veridy installed boxes
-    #     - vagrant status #Check the status of the VMs to see that none of them have been created yet
-    #     - vagrant status
-    #     - virsh list --all #show all running KVM/libvirt VMs
-    #     - deactivate        
-
-    - name: "build PC-DSS compliance as code redhat "
+    - name: "build STIG compliance as code redhat "
       dist: bionic
       language: python
       python: 3.7
@@ -50,14 +24,40 @@ matrix:
       script:
           # - sudo make deploy-complianceascode-redhat
           # - travis_wait 20 waitfortrav.sh
-          - sudo vagrant box add "centos/8" --provider=libvirt
-          - sudo vagrant up --provider=libvirt "vg-compute-13"
+          - sudo vagrant box add "bento/centos-8.2" --provider=virtualbox
+          - sudo vagrant mutate "bento/centos-8.2" libvirt
+          - sudo vagrant up --provider=libvirt "vg-compute-06"
       after_success:
         - vagrant box list #veridy installed boxes
         - vagrant status #Check the status of the VMs to see that none of them have been created yet
         - vagrant status
         - virsh list --all #show all running KVM/libvirt VMs
-        - deactivate  
+        - deactivate        
+
+    # - name: "build PC-DSS compliance as code redhat "
+    #   dist: bionic
+    #   language: python
+    #   python: 3.7
+    #   before_install:
+    #     - pip3 install virtualenv
+    #     - virtualenv -p $(which python3) ~venvpy3
+    #     - source ~venvpy3/bin/activate
+    #     - pip install -r requirements.txt
+    #     - sudo make deploy-libvirt
+    #     - sudo make deploy-vagrant        
+    #     - sudo vagrant plugin install vagrant-libvirt #The vagrant-libvirt plugin is required when using KVM on Linux
+    #     - sudo vagrant plugin install vagrant-mutate #Convert vagrant boxes to work with different providers
+    #   script:
+    #       # - sudo make deploy-complianceascode-redhat
+    #       # - travis_wait 20 waitfortrav.sh
+    #       - sudo vagrant box add "centos/8" --provider=libvirt
+    #       - sudo vagrant up --provider=libvirt "vg-compute-13"
+    #   after_success:
+    #     - vagrant box list #veridy installed boxes
+    #     - vagrant status #Check the status of the VMs to see that none of them have been created yet
+    #     - vagrant status
+    #     - virsh list --all #show all running KVM/libvirt VMs
+    #     - deactivate  
 
     # - name: "build compliance as code debian "
     #   dist: bionic
