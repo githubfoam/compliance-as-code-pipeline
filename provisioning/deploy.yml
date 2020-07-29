@@ -18,9 +18,14 @@
   become: yes
   # roles:
   #   - complianceascode
-  roles:
-    - role: complianceascode 
-      tags: [ pcidss ]    
+  # roles:
+  #   - role: complianceascode 
+  #     tags: [ pcidss ]    
+  tasks:
+      - include_role:
+          name: complianceascode
+        tags:
+          - pcidss
 
 - name: "Install compliance as code"
   gather_facts: true
