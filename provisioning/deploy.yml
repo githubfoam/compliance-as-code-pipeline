@@ -17,10 +17,11 @@
   hosts: "vg-compute-06"
   become: yes
   vars:
-    # stigparam: true
+    stigparam: false
     stigpcidss: true
   roles:
     - complianceascode
+ 
  
 
 - name: "Install compliance as code"
