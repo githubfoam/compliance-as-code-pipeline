@@ -16,9 +16,11 @@
   gather_facts: true  
   hosts: "vg-compute-06"
   become: yes
+  # roles:
+  #   - complianceascode
   roles:
-    - complianceascode
-  
+    - role: complianceascode 
+      tags: [ pcidss ]    
 
 - name: "Install compliance as code"
   gather_facts: true
