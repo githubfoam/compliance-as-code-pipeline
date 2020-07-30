@@ -22,16 +22,24 @@
 #   roles:
 #     - complianceascode
  
-- name: "vg-compute-06"
+# runs all tags 
+# - name: "vg-compute-06"
+#   gather_facts: true  
+#   hosts: "vg-compute-06"
+#   become: yes
+#   tasks:
+#     - include_role:
+#         name: complianceascode
+#         apply:
+#           tags: 
+#             - pcidss
+
+- name: "vg-compute-06"  
   gather_facts: true  
   hosts: "vg-compute-06"
   become: yes
-  tasks:
-    - include_role:
-        name: complianceascode
-        apply:
-          tags: 
-            - pcidss
+  roles:
+    - {role: complianceascode, tags: ['pcidss']}  
 
 - name: "Install compliance as code"
   gather_facts: true
