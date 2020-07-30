@@ -12,16 +12,25 @@
   roles:
     - common
 
+# - name: "vg-compute-06" # traditional syntax
+#   gather_facts: true  
+#   hosts: "vg-compute-06"
+#   become: yes
+#   vars:
+#     stigparam: false
+#     stigpcidss: true
+#   roles:
+#     - complianceascode
+ 
 - name: "vg-compute-06"
   gather_facts: true  
   hosts: "vg-compute-06"
   become: yes
-  vars:
-    stigparam: false
-    stigpcidss: true
-  roles:
-    - complianceascode
- 
+  tasks:
+    - include_role:
+        name: complianceascode
+      tags:
+        - pcidss
  
 
 - name: "Install compliance as code"

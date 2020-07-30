@@ -28,14 +28,23 @@
 # - name: "Run rhel8 pci dss locally"
 #   shell: ansible-playbook -i "localhost," -c local /usr/share/scap-security-guide/ansible/rhel8-playbook-pci-dss.yml
 
+# - name: "run STIG"
+#   shell: bash /usr/share/scap-security-guide/bash/rhel8-script-stig.sh
+#   when: stigparam|bool
+#   register: stigreg
+
+
+# - debug: var=stigreg.stdout_lines  
+#   when: stigparam|bool  
+
 - name: "run STIG"
   shell: bash /usr/share/scap-security-guide/bash/rhel8-script-stig.sh
-  when: stigparam|bool
+  tags: stig
   register: stigreg
 
 
 - debug: var=stigreg.stdout_lines  
-  when: stigparam|bool  
+  tags: stig
 
 # Print the shell task's stdout.
 # - debug: msg={{ stig.stdout }}
@@ -44,9 +53,9 @@
 # - debug: var=stig
 
 # https://docs.ansible.com/ansible/latest/modules/debug_module.html
-# - debug:
-#     var: stigreg
-#     verbosity: 2
+- debug:
+    var: stigreg
+    verbosity: 2
 
 # - debug:
 #     var: stig
@@ -56,15 +65,23 @@
 #     var: stig
 #     verbosity: 3 #set to 3 it will only run debug when -vvv or above        
 
+# - name: "run PCI DSS"
+#   shell: bash /usr/share/scap-security-guide/bash/rhel8-script-pci-dss.sh
+#   when: stigpcidss|bool
+#   register: pcidssreg
+
+# - debug: var=pcidssreg.stdout_lines  
+#   when: stigpcidss|bool
+
 - name: "run PCI DSS"
   shell: bash /usr/share/scap-security-guide/bash/rhel8-script-pci-dss.sh
-  when: stigpcidss|bool
+  tags: pcidss 
   register: pcidssreg
 
-- debug: var=pcidssreg.stdout_lines  
-  when: stigpcidss|bool
+# - debug: var=pcidssreg.stdout_lines  
+#   tags: pcidss 
 
 # https://docs.ansible.com/ansible/latest/modules/debug_module.html
-# - debug:
-#     var: pcidssreg
-#     verbosity: 2
+- debug:
+    var: pcidssreg
+    verbosity: 2
