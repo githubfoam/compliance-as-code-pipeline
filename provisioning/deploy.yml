@@ -29,11 +29,9 @@
   tasks:
     - include_role:
         name: complianceascode
-      # tags:
-      #   - pcidss
-      apply:
-        tags: 
-          - pcidss
+        apply:
+          tags: 
+            - pcidss
 
 - name: "Install compliance as code"
   gather_facts: true
