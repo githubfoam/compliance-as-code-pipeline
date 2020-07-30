@@ -34,12 +34,22 @@
 #           tags: 
 #             - pcidss
 
+# runs all tags 
+# - name: "vg-compute-06"  
+#   gather_facts: true  
+#   hosts: "vg-compute-06"
+#   become: yes
+#   roles:
+#     - {role: complianceascode, tags: ['pcidss']}  
+
 - name: "vg-compute-06"  
   gather_facts: true  
   hosts: "vg-compute-06"
   become: yes
   roles:
-    - {role: complianceascode, tags: ['pcidss']}  
+    - import_role:
+        name: complianceascode
+      tags: [ pcidss] 
 
 - name: "Install compliance as code"
   gather_facts: true
