@@ -12,26 +12,29 @@
   roles:
     - common
 
-- name: "vg-compute-06"
-  gather_facts: true
-  hosts:  vg-compute-06
-  become: yes
-  roles:
-    - complianceascode
-
-# - name: "vg-compute-06" # traditional syntax
-#   gather_facts: true  
-#   hosts: "vg-compute-06"
+# - name: "vg-compute-06"
+#   gather_facts: true
+#   hosts:  vg-compute-06
 #   become: yes
-#   vars:
-#     stigparam: false
-#     stigpcidss: true
 #   roles:
 #     - complianceascode
+
+- name: "vg-compute-06" # traditional syntax
+  gather_facts: true  
+  hosts: "vg-compute-06"
+  become: yes
+  vars:
+    stigparam: false
+    pcidssparam: true
+  roles:
+    - complianceascode
 
 - name: "vg-compute-13"
   gather_facts: true
   hosts: "vg-compute-13"
   become: yes
+  vars:
+    stigparam: true
+    pcidssparam: false  
   roles:
     - complianceascode
