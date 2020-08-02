@@ -19,8 +19,8 @@ vagrant box add "centos/8" --provider=libvirt
 vagrant up --provider=libvirt "vg-compute-06"
 
 # https://app.vagrantup.com/fedora/boxes/32-cloud-base
-vagrant box add "centos/8" --provider=libvirt
-vagrant up --provider=libvirt "vg-compute-13"
+# vagrant box add "centos/8" --provider=libvirt
+# vagrant up --provider=libvirt "vg-compute-13"
 
 
 vagrant box list #veridy installed boxes
