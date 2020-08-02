@@ -20,7 +20,10 @@ matrix:
       script:
           - sudo make deploy-libvirt
           - sudo make deploy-vagrant
-          - sudo make deploy-complianceascode-centos8         
+          # - sudo make deploy-complianceascode-centos8
+          - |
+            sudo vagrant box add "centos/8" --provider=libvirt
+            sudo vagrant up --provider=libvirt "vg-compute-13"         
           # - sudo vagrant box add "centos/8" --provider=libvirt
           # - sudo vagrant up --provider=libvirt "vg-compute-13"
       after_success:
