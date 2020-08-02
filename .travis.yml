@@ -20,26 +20,26 @@ matrix:
       script:
           - sudo make deploy-libvirt
           - sudo make deploy-vagrant
-          # - sudo make deploy-complianceascode-centos8         
-          - sudo vagrant box add "centos/8" --provider=libvirt
-          - sudo vagrant up --provider=libvirt "vg-compute-13"
+          - sudo make deploy-complianceascode-centos8         
+          # - sudo vagrant box add "centos/8" --provider=libvirt
+          # - sudo vagrant up --provider=libvirt "vg-compute-13"
       after_success:
         - deactivate       
 
-    - name: "build PCI-DSS compliance as code centos8 "
-      dist: bionic
-      language: python
-      python: 3.7
-      before_install:
-        - pip3 install virtualenv
-        - virtualenv -p $(which python3) ~venvpy3
-        - source ~venvpy3/bin/activate
-        - pip install -r requirements.txt
-      script:
-          - sudo make deploy-libvirt
-          - sudo make deploy-vagrant
-          # - sudo make deploy-complianceascode-centos8         
-          - vagrant box add "centos/8" --provider=libvirt
-          - vagrant up --provider=libvirt "vg-compute-06"          
-      after_success:
-        - deactivate   
+    # - name: "build PCI-DSS compliance as code centos8 "
+    #   dist: bionic
+    #   language: python
+    #   python: 3.7
+    #   before_install:
+    #     - pip3 install virtualenv
+    #     - virtualenv -p $(which python3) ~venvpy3
+    #     - source ~venvpy3/bin/activate
+    #     - pip install -r requirements.txt
+    #   script:
+    #       - sudo make deploy-libvirt
+    #       - sudo make deploy-vagrant
+    #       # - sudo make deploy-complianceascode-centos8         
+    #       - vagrant box add "centos/8" --provider=libvirt
+    #       - vagrant up --provider=libvirt "vg-compute-06"          
+    #   after_success:
+    #     - deactivate   
