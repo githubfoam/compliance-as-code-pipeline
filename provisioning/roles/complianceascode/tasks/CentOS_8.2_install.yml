@@ -23,29 +23,10 @@
   include_tasks: oscap.yml
 
 
-# - name: "run STIG"
-#   shell: bash /usr/share/scap-security-guide/bash/rhel8-script-stig.sh
-#   register: stig
-
-# # - debug: var=stig.stdout_lines  
-
-# # https://docs.ansible.com/ansible/latest/modules/debug_module.html
-# - name: "debug msg out"
-#   debug:
-#     var: stig
-#     verbosity: 2
-
 - name: "run STIG"
   shell: bash /usr/share/scap-security-guide/bash/rhel8-script-stig.sh
   when: stigparam|bool
   register: stigreg
-
-
-# - name: "print STIG debug"
-#   debug:
-#     var: stigreg
-#     verbosity: 2
-#   when: stigparam|bool
 
 - name: "print STIG debug"
   debug: 
@@ -56,14 +37,7 @@
   when: pcidssparam|bool
   register: pcidssreg
 
-# - name: "print PCI-DSS debug"
-#   debug:
-#     var: pcidssreg
-#     verbosity: 2 
-#   when: pcidssparam|bool
-
 - name: "print PCI-DSS debug"
   debug: 
     var: pcidssreg.stdout_lines  
 
-# - debug: var=pcidssreg.stdout_lines  
