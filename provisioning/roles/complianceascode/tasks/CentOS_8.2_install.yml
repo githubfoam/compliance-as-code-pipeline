@@ -57,3 +57,9 @@
     var: pcidssreg
     verbosity: 2 
   when: pcidssparam|bool
+
+- name: "print PCI-DSS debug v2"
+  debug: 
+    var: pcidssreg.stdout_lines  
+
+- debug: var=pcidssreg.stdout_lines  
