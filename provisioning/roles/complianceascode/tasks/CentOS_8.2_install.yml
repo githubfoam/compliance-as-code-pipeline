@@ -41,25 +41,29 @@
   register: stigreg
 
 
+# - name: "print STIG debug"
+#   debug:
+#     var: stigreg
+#     verbosity: 2
+#   when: stigparam|bool
+
 - name: "print STIG debug"
-  debug:
-    var: stigreg
-    verbosity: 2
-  when: stigparam|bool
+  debug: 
+    var: stigreg.stdout_lines 
 
 - name: "run PCI-DSS"
   shell: bash /usr/share/scap-security-guide/bash/rhel8-script-pci-dss.sh
   when: pcidssparam|bool
   register: pcidssreg
 
-- name: "print PCI-DSS debug"
-  debug:
-    var: pcidssreg
-    verbosity: 2 
-  when: pcidssparam|bool
+# - name: "print PCI-DSS debug"
+#   debug:
+#     var: pcidssreg
+#     verbosity: 2 
+#   when: pcidssparam|bool
 
-- name: "print PCI-DSS debug v2"
+- name: "print PCI-DSS debug"
   debug: 
     var: pcidssreg.stdout_lines  
 
-- debug: var=pcidssreg.stdout_lines  
+# - debug: var=pcidssreg.stdout_lines  

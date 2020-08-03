@@ -29,6 +29,27 @@ matrix:
       after_success:
         - deactivate       
 
+    - name: "build PCIDSS compliance as code centos8 "
+      dist: bionic
+      language: python
+      python: 3.7
+      before_install:
+        - pip3 install virtualenv
+        - virtualenv -p $(which python3) ~venvpy3
+        - source ~venvpy3/bin/activate
+        - pip install -r requirements.txt
+      script:
+          - sudo make deploy-libvirt
+          - sudo make deploy-vagrant
+          - sudo make deploy-centos8-pcidss
+          # - | #FAILED
+          #   sudo vagrant box add "centos/8" --provider=libvirt
+          #   sudo vagrant up --provider=libvirt "vg-compute-13"         
+          # - sudo vagrant box add "centos/8" --provider=libvirt #FAILED
+          # - sudo vagrant up --provider=libvirt "vg-compute-13" #FAILED
+      after_success:
+        - deactivate 
+
     # - name: "build PCI-DSS compliance as code centos8 "
     #   dist: bionic
     #   language: python
