@@ -21,3 +21,23 @@
 
 - name: "Add oscap tasks"
   include_tasks: oscap.yml
+
+
+- name: "run STIG"
+  shell: bash /usr/share/scap-security-guide/bash/rhel8-script-stig.sh
+  when: stigparam|bool
+  register: stigreg
+
+- name: "print STIG debug"
+  debug: 
+    var: stigreg.stdout_lines 
+
+- name: "run PCI-DSS"
+  shell: bash /usr/share/scap-security-guide/bash/rhel8-script-pci-dss.sh
+  when: pcidssparam|bool
+  register: pcidssreg
+
+- name: "print PCI-DSS debug"
+  debug: 
+    var: pcidssreg.stdout_lines  
+

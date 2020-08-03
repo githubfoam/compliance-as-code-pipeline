@@ -126,6 +126,7 @@ total 15412
 -rw-r--r--. 1 root root  499743 Apr 24 02:33 rhel6-script-standard.sh
 -rw-r--r--. 1 root root  584490 Apr 24 02:33 rhel6-script-stig.sh
 -rw-r--r--. 1 root root  546446 Apr 24 02:33 rhel6-script-usgcb-rhel6-server.sh
+
 -rw-r--r--. 1 root root  171699 Apr 24 02:34 rhel7-script-anssi_nt28_enhanced.sh
 -rw-r--r--. 1 root root  184707 Apr 24 02:34 rhel7-script-anssi_nt28_high.sh
 -rw-r--r--. 1 root root  157416 Apr 24 02:34 rhel7-script-anssi_nt28_intermediary.sh
@@ -144,6 +145,7 @@ total 15412
 -rw-r--r--. 1 root root   77288 Apr 24 02:34 rhel7-script-rht-ccp.sh
 -rw-r--r--. 1 root root  330465 Apr 24 02:34 rhel7-script-standard.sh
 -rw-r--r--. 1 root root  773254 Apr 24 02:34 rhel7-script-stig.sh
+
 -rw-r--r--. 1 root root     774 Apr 24 02:34 rhel8-script-default.sh
 -rw-r--r--. 1 root root  337909 Apr 24 02:34 rhel8-script-e8.sh
 -rw-r--r--. 1 root root  366287 Apr 24 02:34 rhel8-script-ospp.sh

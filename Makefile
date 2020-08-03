@@ -1,6 +1,12 @@
 IMAGE := alpine/fio
 APP:="scripts/usernetes-containerd.sh"
 
+deploy-centos8-pcidss:
+	bash scripts/deploy-centos8-pcidss.sh
+
+deploy-centos8-stig:
+	bash scripts/deploy-centos8-stig.sh
+
 deploy-complianceascode-suse:
 	bash scripts/deploy-complianceascode-suse.sh
 
