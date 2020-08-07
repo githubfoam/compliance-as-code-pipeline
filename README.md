@@ -155,4 +155,18 @@ total 15412
 
 ~~~~
 https://github.com/complianceascode/content
+
+
+PCIDSS
+https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard
+https://www.pcisecuritystandards.org/
+
+STIG
+https://en.wikipedia.org/wiki/Security_Technical_Implementation_Guide
+https://cyber.trackr.live/stig
+https://nvd.nist.gov/ncp/repository
+
+HIPAA
+https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act
+
 ~~~~

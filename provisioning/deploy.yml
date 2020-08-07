@@ -1,31 +1,12 @@
 ---
-# - name: "Boot all hosts"
-#   gather_facts: true
-#   hosts:  all
-#   become: yes
-#   vars:
-#     add_host_entries: true
-#     add_resolv_entries: true
-#   pre_tasks:
-#   - name: "Setting hostname"
-#     shell: "hostnamectl set-hostname {{ inventory_hostname }}"
-#   roles:
-#     - common
-
-# - name: "vg-compute-06"
-#   gather_facts: true
-#   hosts:  vg-compute-06
-#   become: yes
-#   roles:
-#     - complianceascode
-
 - name: "vg-compute-06" 
   gather_facts: true  
   hosts: "vg-compute-06"
   become: yes
   vars:
-    stigparam: false
-    pcidssparam: true
+    stigparam: true
+    pcidssparam: false
+    hipaaparam: false
   roles:
     - common
     - complianceascode
@@ -37,6 +18,42 @@
   vars:
     stigparam: true
     pcidssparam: false  
+  roles:
+    - common
+    - complianceascode
+
+- name: "vg-compute-14"
+  gather_facts: true
+  hosts: "vg-compute-14"
+  become: yes
+  vars:
+    stigparam: true
+    pcidssparam: false  
+    hipaaparam: false
+  roles:
+    - common
+    - complianceascode
+
+- name: "vg-compute-15"
+  gather_facts: true
+  hosts: "vg-compute-15"
+  become: yes
+  vars:
+    stigparam: false
+    pcidssparam: true  
+    hipaaparam: false
+  roles:
+    - common
+    - complianceascode
+
+- name: "vg-compute-16"
+  gather_facts: true
+  hosts: "vg-compute-16"
+  become: yes
+  vars:
+    stigparam: false
+    pcidssparam: false  
+    hipaaparam: true
   roles:
     - common
     - complianceascode

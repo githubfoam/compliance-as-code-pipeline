@@ -1,6 +1,15 @@
 IMAGE := alpine/fio
 APP:="scripts/usernetes-containerd.sh"
 
+deploy-centos7-hipaa:
+	bash scripts/deploy-centos7-hipaa.sh
+
+deploy-centos7-pcidss:
+	bash scripts/deploy-centos7-pcidss.sh
+
+deploy-centos7-stig:
+	bash scripts/deploy-centos7-stig.sh
+
 deploy-centos8-pcidss:
 	bash scripts/deploy-centos8-pcidss.sh
 
