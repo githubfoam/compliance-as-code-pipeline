@@ -22,4 +22,5 @@
   - { ip: 192.168.20.22, namelong: vg-compute-14.local, nameshort: vg-compute-14 }
   - { ip: 192.168.20.23, namelong: vg-compute-15.local, nameshort: vg-compute-15 }    
   - { ip: 192.168.20.24, namelong: vg-compute-16.local, nameshort: vg-compute-16 }      
+  - { ip: 192.168.20.25, namelong: vg-compute-16.local, nameshort: vg-compute-17 }      
   # when: add_host_entries
